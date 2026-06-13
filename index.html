@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Privacy Policy for the Bolt IQ mobile game.">
-  <title>Bolt IQ Privacy Policy</title>
+  <meta name="description"
+        content="Privacy Policy for Bolt IQ and Hexa Smart Sort.">
+  <title>Eric Games Studio Privacy Policy</title>
   <style>
     :root {
       color-scheme: dark;
@@ -21,6 +22,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background:
@@ -31,7 +36,7 @@
     }
 
     main {
-      width: min(900px, calc(100% - 32px));
+      width: min(920px, calc(100% - 32px));
       margin: 32px auto;
       padding: clamp(24px, 5vw, 52px);
       background: rgba(18, 26, 43, 0.96);
@@ -41,21 +46,27 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3 {
       line-height: 1.25;
     }
 
     h1 {
       margin: 0 0 8px;
       color: var(--accent);
-      font-size: clamp(2rem, 7vw, 3.5rem);
+      font-size: clamp(2rem, 7vw, 3.4rem);
     }
 
     h2 {
-      margin-top: 34px;
+      margin-top: 38px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
-      font-size: 1.35rem;
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      color: var(--text);
     }
 
     p,
@@ -73,15 +84,49 @@
 
     .effective-date {
       margin-top: 0;
-      color: var(--muted);
+    }
+
+    .summary,
+    .game-card {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
     }
 
     .summary {
       margin: 28px 0;
       padding: 18px 20px;
-      background: var(--surface-light);
       border-left: 4px solid var(--accent);
-      border-radius: 8px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .game-card {
+      padding: 18px;
+    }
+
+    .game-card p {
+      margin-bottom: 0;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    nav a {
+      padding: 8px 12px;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      text-decoration: none;
     }
 
     footer {
@@ -95,45 +140,74 @@
 </head>
 <body>
   <main>
-    <h1>Bolt IQ Privacy Policy</h1>
-    <p class="effective-date"><strong>Effective date:</strong> June 13, 2026</p>
+    <h1>Eric Games Studio Privacy Policy</h1>
+    <p class="effective-date">
+      <strong>Effective date:</strong> June 13, 2026
+    </p>
 
     <div class="summary">
-      Bolt IQ does not require you to create an account or provide your name,
-      email address, contacts, photos, camera, microphone, or precise location.
-      The game uses advertising and offers optional in-app purchases.
+      This policy covers both <strong>Hexa Smart Sort</strong> and
+      <strong>Bolt IQ</strong>. Neither game requires a player account or asks
+      you to provide your name, email address, contacts, photos, camera,
+      microphone, or precise location.
     </div>
+
+    <nav aria-label="Policy sections">
+      <a href="#games">Our games</a>
+      <a href="#advertising">Advertising</a>
+      <a href="#purchases">Bolt IQ purchases</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
     <p>
       This Privacy Policy explains how Eric Games Studio ("we", "us", or
-      "our") handles information when you use the Bolt IQ mobile game
-      ("Bolt IQ" or the "Game").
+      "our") handles information when you use our mobile games.
     </p>
+
+    <h2 id="games">Games Covered by This Policy</h2>
+    <div class="game-grid">
+      <section class="game-card">
+        <h3>Hexa Smart Sort</h3>
+        <p>
+          A hexa sorting puzzle game supported by advertisements. Hexa Smart
+          Sort does not currently offer the Bolt IQ ad-free purchase system.
+        </p>
+      </section>
+      <section class="game-card">
+        <h3>Bolt IQ</h3>
+        <p>
+          A puzzle game supported by advertisements, with optional permanent
+          or monthly ad-free purchases through Google Play.
+        </p>
+      </section>
+    </div>
 
     <h2>Information Stored on Your Device</h2>
     <p>
-      Bolt IQ stores game information locally on your device so the Game can
-      remember your progress and preferences. This may include:
+      Our games may store gameplay information locally on your device so they
+      can remember progress and preferences. Depending on the game, this may
+      include:
     </p>
     <ul>
-      <li>Level progress and tutorial completion;</li>
-      <li>Coins, daily rewards, and unlocked or equipped game items;</li>
+      <li>Level progress, scores, and tutorial completion;</li>
+      <li>Coins, rewards, and unlocked or equipped game items;</li>
       <li>Music, sound, vibration, and notification preferences;</li>
       <li>Advertising frequency progress; and</li>
-      <li>Your verified ad-free purchase or subscription status.</li>
+      <li>For Bolt IQ, verified ad-free purchase or subscription status.</li>
     </ul>
     <p>
-      This local information is not a public profile. You can remove it by
-      clearing the Game's storage or uninstalling the Game, subject to any
-      purchase records retained by Google Play.
+      This local information is not a public player profile. It can generally
+      be removed by clearing the game's storage or uninstalling the game,
+      subject to purchase records retained by Google Play.
     </p>
 
-    <h2>Advertising</h2>
+    <h2 id="advertising">Advertising</h2>
     <p>
-      Bolt IQ uses Unity LevelPlay and Unity Ads to provide interstitial and
-      optional rewarded advertisements. These advertising services and their
-      partners may process information such as:
+      Hexa Smart Sort and Bolt IQ are ad-supported. They may use advertising
+      services including Google AdMob, Unity LevelPlay, Unity Ads, and
+      advertising partners made available through those platforms.
     </p>
+    <p>Advertising services may process information such as:</p>
     <ul>
       <li>Device type, operating system, language, and app version;</li>
       <li>IP address and approximate location derived from the IP address;</li>
@@ -144,19 +218,25 @@
     <p>
       This information may be used to deliver ads, measure performance, limit
       repeated ads, prevent fraud, and, where permitted, personalize ads.
-      Purchasing ad-free access disables automatic interstitial ads. Optional
-      rewarded ads may remain available when you choose to use them.
+      Players can use Android and Google privacy or advertising controls to
+      manage available choices.
+    </p>
+    <p>
+      In Bolt IQ, purchasing ad-free access disables automatic interstitial
+      ads. Optional rewarded ads may remain available when a player chooses to
+      use them. Hexa Smart Sort is currently supported by ads and does not use
+      Bolt IQ's ad-free purchase system.
     </p>
 
-    <h2>In-App Purchases</h2>
+    <h2 id="purchases">Bolt IQ In-App Purchases</h2>
     <p>
-      Bolt IQ offers optional purchases through Google Play, including
-      permanent ad-free access and a monthly ad-free subscription. Google Play
-      processes payment information. We do not receive or store your full
-      credit card or bank account details.
+      This section applies only to Bolt IQ. Bolt IQ offers optional purchases
+      through Google Play, including permanent ad-free access and a monthly
+      ad-free subscription. Google Play processes payment information. We do
+      not receive or store full credit card or bank account details.
     </p>
     <p>
-      To confirm that a purchase is valid, the Game sends the product ID,
+      To confirm that a purchase is valid, Bolt IQ sends the product ID,
       application ID, transaction ID, and Google Play purchase receipt or token
       to our purchase-verification service hosted with Firebase and Google
       Cloud. The service checks the purchase with Google Play before enabling
@@ -165,29 +245,36 @@
 
     <h2>Server and Security Information</h2>
     <p>
-      Our purchase-verification service may process an IP address and basic
-      request or error logs for security, abuse prevention, troubleshooting,
-      and rate limiting. We do not use the purchase-verification service to
-      create advertising profiles or player accounts.
+      Bolt IQ's purchase-verification service may process an IP address and
+      basic request or error logs for security, abuse prevention,
+      troubleshooting, and rate limiting. We do not use that service to create
+      advertising profiles or player accounts.
     </p>
 
-    <h2>How We Use Information</h2>
-    <p>We use information described in this policy to:</p>
+    <h2>How Information Is Used</h2>
+    <p>Information described in this policy may be used to:</p>
     <ul>
-      <li>Operate the Game and remember your progress and settings;</li>
+      <li>Operate each game and remember progress and settings;</li>
       <li>Show and measure advertisements;</li>
       <li>Provide optional rewards connected to rewarded ads;</li>
-      <li>Verify purchases and restore eligible entitlements;</li>
-      <li>Protect the Game and purchase system from fraud and abuse; and</li>
+      <li>For Bolt IQ, verify purchases and restore eligible entitlements;</li>
+      <li>Protect our games and services from fraud and abuse; and</li>
       <li>Diagnose errors and maintain reliable service.</li>
     </ul>
 
     <h2>Third-Party Services</h2>
     <p>
-      The following providers process information under their own privacy
+      Third-party providers process information under their own privacy
       policies:
     </p>
     <ul>
+      <li>
+        <a href="https://policies.google.com/privacy"
+           target="_blank" rel="noopener noreferrer">
+          Google Privacy Policy
+        </a>
+        (Google Play, Google AdMob, Firebase, and Google Cloud)
+      </li>
       <li>
         <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
            target="_blank" rel="noopener noreferrer">
@@ -196,52 +283,50 @@
         (Unity LevelPlay and Unity Ads)
       </li>
       <li>
-        <a href="https://policies.google.com/privacy"
-           target="_blank" rel="noopener noreferrer">
-          Google Privacy Policy
-        </a>
-        (Google Play, Firebase, and Google Cloud)
-      </li>
-      <li>
         <a href="https://firebase.google.com/support/privacy"
            target="_blank" rel="noopener noreferrer">
           Firebase Privacy and Security Information
         </a>
+        (Bolt IQ purchase verification)
       </li>
     </ul>
 
     <h2>Data Retention</h2>
     <p>
-      Local game data remains on your device until it is cleared or the Game is
-      uninstalled. Google retains purchase and payment records according to its
-      own policies and legal obligations. Our verification service does not
-      intentionally store purchase receipts in a player database, although
-      limited technical logs may be retained by our service providers for
-      security and operational purposes.
+      Local game data remains on your device until it is cleared or the game is
+      uninstalled. Advertising providers retain information according to their
+      own policies. Google retains purchase and payment records according to
+      its policies and legal obligations.
+    </p>
+    <p>
+      Bolt IQ's verification service does not intentionally store purchase
+      receipts in a player database, although limited technical logs may be
+      retained by service providers for security and operational purposes.
     </p>
 
     <h2>Your Choices and Rights</h2>
     <p>You may:</p>
     <ul>
-      <li>Use your Android and Google privacy or advertising controls;</li>
+      <li>Use Android and Google privacy or advertising controls;</li>
       <li>Decline optional rewarded ads;</li>
-      <li>Purchase ad-free access to disable automatic interstitial ads;</li>
-      <li>Clear local Game data or uninstall the Game; and</li>
+      <li>Clear locally stored game data or uninstall a game;</li>
+      <li>For Bolt IQ, purchase ad-free access if available; and</li>
       <li>Contact us regarding an applicable privacy request.</li>
     </ul>
     <p>
-      Bolt IQ does not currently create a remote player account. Therefore,
-      most gameplay data can be deleted directly from your device. Google Play
+      Our games do not currently create remote player accounts. Most gameplay
+      data can therefore be deleted directly from the device. Google Play
       purchase records are controlled by Google and may need to be managed
       through your Google account or Google Play support.
     </p>
 
     <h2>Children's Privacy</h2>
     <p>
-      Bolt IQ is not directed to children under 13, and we do not knowingly
+      Our games are not directed to children under 13, and we do not knowingly
       collect personal information directly from children under 13. If you
-      believe a child has provided personal information through the Game,
-      contact us so we can review the situation and take appropriate action.
+      believe a child has provided personal information through one of our
+      games, contact us so we can review the situation and take appropriate
+      action.
     </p>
 
     <h2>International Processing</h2>
@@ -254,26 +339,26 @@
     <h2>Security</h2>
     <p>
       We use reasonable technical and organizational measures intended to
-      protect information, including encrypted HTTPS communication for
-      purchase verification. No method of electronic transmission or storage
-      is completely secure.
+      protect information, including encrypted HTTPS communication for Bolt
+      IQ purchase verification. No method of electronic transmission or
+      storage is completely secure.
     </p>
 
     <h2>Changes to This Policy</h2>
     <p>
-      We may update this Privacy Policy when the Game, its services, or legal
+      We may update this Privacy Policy when our games, services, or legal
       requirements change. The updated policy will be posted on this page with
       a revised effective date.
     </p>
 
-    <h2>Contact Us</h2>
+    <h2 id="contact">Contact Us</h2>
     <p>
       For privacy questions or requests, contact Eric Games Studio at
       <a href="mailto:ericotoo347@gmail.com">ericotoo347@gmail.com</a>.
     </p>
 
     <footer>
-      Package name: Com.Erwares.BoltIQ
+      Games covered: Hexa Smart Sort and Bolt IQ
     </footer>
   </main>
 </body>
