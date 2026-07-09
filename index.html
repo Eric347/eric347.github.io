@@ -72,7 +72,8 @@
 
     .summary,
     .game-card,
-    .notice {
+    .notice,
+    .achievement-card {
       background: var(--surface-light);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -94,7 +95,8 @@
       color: var(--gold);
     }
 
-    .game-grid {
+    .game-grid,
+    .achievement-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
@@ -104,6 +106,24 @@
     .game-card { padding: 18px; }
 
     .game-card p { margin-bottom: 0; }
+
+    .achievement-card {
+      overflow: hidden;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .achievement-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #f5f8ff;
+    }
+
+    .achievement-copy {
+      padding: 16px 18px 18px;
+    }
+
+    .achievement-copy p { margin-bottom: 0; }
 
     nav {
       display: flex;
@@ -145,6 +165,7 @@
 
     <nav aria-label="Page sections">
       <a href="#games">Our games</a>
+      <a href="#achievements">Achievements</a>
       <a href="#advertising">Advertising</a>
       <a href="#purchases">Bolt IQ purchases</a>
       <a href="#pre-registration-terms">Pre-registration terms</a>
@@ -172,6 +193,37 @@
           A screw physics puzzle game supported by advertisements, optional
           rewarded ads, and optional in-app purchases.
         </p>
+      </section>
+    </div>
+
+    <h2 id="achievements">Achievements</h2>
+    <p>
+      Highlights from our game growth, store optimization, and promotional
+      progress.
+    </p>
+    <div class="achievement-grid">
+      <section class="achievement-card">
+        <img src="assets/bolt-iq-campaign-results.png"
+             alt="Bolt IQ promotion campaign showing cost, conversions, and target CPA results.">
+        <div class="achievement-copy">
+          <h3>Bolt IQ Promotion</h3>
+          <p>
+            Campaign progress showing strong conversion activity and efficient
+            promotion performance.
+          </p>
+        </div>
+      </section>
+
+      <section class="achievement-card">
+        <img src="assets/store-listing-conversion.png"
+             alt="Store listing dashboard showing a 77.36 percent conversion rate.">
+        <div class="achievement-copy">
+          <h3>Store Listing Growth</h3>
+          <p>
+            Store listing optimization reached a 77.36% conversion rate during
+            active testing.
+          </p>
+        </div>
       </section>
     </div>
 
