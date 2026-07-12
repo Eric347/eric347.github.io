@@ -3,138 +3,558 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Privacy Policy and Pre-registration Reward Terms for Bolt IQ and Hexa Smart Sort.">
-  <title>Eric Games Studio | Privacy Policy</title>
+  <meta name="description" content="Erwares Games is the independent studio behind Bolt IQ: Screw Physics Puzzle and Hexa Smart Sort.">
+  <meta name="theme-color" content="#080a0f">
+  <title>Erwares Games | Independent Game Studio</title>
   <style>
     :root {
       color-scheme: dark;
-      --background: #090d18;
-      --surface: #121a2b;
-      --surface-light: #1a2640;
-      --text: #f4f7ff;
-      --muted: #b7c2d9;
-      --accent: #49d9ff;
-      --gold: #ffc84a;
-      --border: #2b3b5e;
+      --ink: #080a0f;
+      --ink-soft: #10141c;
+      --panel: #161b25;
+      --panel-raised: #1d2430;
+      --paper: #f2f5f8;
+      --paper-muted: #d9e0e8;
+      --text: #f7f9fc;
+      --muted: #aeb8c8;
+      --dark-text: #10141a;
+      --cyan: #28d8ff;
+      --gold: #ffc44f;
+      --violet: #a25cff;
+      --lime: #a8ec3d;
+      --red: #ff5d6c;
+      --line: rgba(255, 255, 255, 0.13);
+      --dark-line: rgba(8, 10, 15, 0.16);
+      --content: 1180px;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 86px;
+    }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top, #162749 0, var(--background) 42rem);
+      background: var(--ink);
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
       line-height: 1.65;
     }
 
-    main {
-      width: min(960px, calc(100% - 32px));
-      margin: 32px auto;
-      padding: clamp(24px, 5vw, 52px);
-      background: rgba(18, 26, 43, 0.96);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-    }
+    body.lightbox-open { overflow: hidden; }
 
-    h1, h2, h3 { line-height: 1.25; }
+    img { max-width: 100%; }
 
-    h1 {
-      margin: 0 0 8px;
-      color: var(--accent);
-      font-size: clamp(2rem, 7vw, 3.4rem);
-    }
+    a { color: inherit; }
 
-    h2 {
-      margin-top: 38px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-      font-size: 1.4rem;
-    }
+    button,
+    a { -webkit-tap-highlight-color: transparent; }
 
+    h1,
+    h2,
+    h3,
+    p { margin-top: 0; }
+
+    h1,
+    h2,
     h3 {
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .container {
+      width: min(var(--content), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 10, 15, 0.94);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 70px;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .wordmark {
+      flex: 0 0 auto;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .wordmark span { color: var(--cyan); }
+
+    .site-nav {
+      display: flex;
+      min-width: 0;
+      margin-left: auto;
+      align-items: center;
+      gap: 24px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+
+    .site-nav::-webkit-scrollbar { display: none; }
+
+    .site-nav a {
+      padding: 24px 0 21px;
+      border-bottom: 3px solid transparent;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      border-color: var(--cyan);
+      color: var(--text);
+      outline: none;
+    }
+
+    .site-nav .ads-link { color: var(--gold); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 640px;
+      height: calc(100svh - 106px);
+      max-height: 790px;
+      overflow: hidden;
+      place-items: center;
+      isolation: isolate;
+      border-bottom: 1px solid var(--line);
+      background: #090c13;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(5, 7, 12, 0.54);
+    }
+
+    .hero-art {
+      position: absolute;
+      z-index: -2;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-art-bolt {
+      left: -5%;
+      bottom: 5%;
+      width: min(48vw, 620px);
+      opacity: 0.46;
+      transform: rotate(-5deg);
+    }
+
+    .hero-art-hexa {
+      top: 50%;
+      right: -9%;
+      width: min(57vw, 720px);
+      opacity: 0.46;
+      transform: translateY(-50%) rotate(5deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(860px, calc(100% - 40px));
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero-kicker {
+      margin-bottom: 16px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
       margin-bottom: 8px;
+      font-size: 5rem;
+      font-weight: 950;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.72);
+    }
+
+    .studio-name {
+      margin-bottom: 24px;
+      color: var(--cyan);
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 660px;
+      margin: 0 auto 30px;
+      color: #dbe3ef;
+      font-size: 1.18rem;
+    }
+
+    .hero-actions,
+    .game-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-weight: 850;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      background: var(--cyan);
+      color: #051118;
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.34);
+      background: rgba(8, 10, 15, 0.76);
       color: var(--text);
     }
 
-    p, li { color: var(--muted); }
-
-    strong { color: var(--text); }
-
-    a { color: var(--accent); }
-
-    .effective-date { margin-top: 0; }
-
-    .summary,
-    .game-card,
-    .notice,
-    .achievement-card {
-      background: var(--surface-light);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+    .button-gold {
+      background: var(--gold);
+      color: #171006;
     }
 
-    .summary {
-      margin: 28px 0;
-      padding: 18px 20px;
-      border-left: 4px solid var(--accent);
+    .hero-facts {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      background: rgba(8, 10, 15, 0.88);
     }
 
-    .notice {
-      margin: 24px 0;
-      padding: 18px 20px;
-      border-left: 4px solid var(--gold);
+    .hero-fact {
+      padding: 16px 20px;
+      text-align: center;
     }
 
-    .notice strong {
+    .hero-fact + .hero-fact { border-left: 1px solid var(--line); }
+
+    .hero-fact strong {
+      display: block;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .hero-fact span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .band {
+      padding: 94px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .band-dark { background: var(--ink); }
+    .band-raised { background: var(--ink-soft); }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 430px);
+      gap: 34px;
+      margin-bottom: 44px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: 3.1rem;
+    }
+
+    .section-heading p {
+      margin-bottom: 2px;
+      color: var(--muted);
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .game-card {
+      display: flex;
+      min-width: 0;
+      min-height: 610px;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .game-card:hover {
+      border-color: rgba(40, 216, 255, 0.65);
+      transform: translateY(-4px);
+    }
+
+    .game-media {
+      display: grid;
+      min-height: 310px;
+      padding: 30px;
+      place-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bolt-media { background: #eef1f5; }
+    .hexa-media { background: #0c0715; }
+
+    .bolt-media img {
+      width: 100%;
+      max-width: 520px;
+      object-fit: contain;
+    }
+
+    .hexa-media img {
+      width: 280px;
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 24%;
+    }
+
+    .game-body {
+      display: flex;
+      padding: 28px;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    .game-number {
+      margin-bottom: 10px;
       color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
-    .game-grid,
+    .game-body h3 {
+      margin-bottom: 13px;
+      font-size: 1.72rem;
+    }
+
+    .game-body p {
+      margin-bottom: 26px;
+      color: var(--muted);
+    }
+
+    .game-actions {
+      margin-top: auto;
+      justify-content: flex-start;
+    }
+
+    .play-icon {
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
     .achievement-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
-      margin: 20px 0;
     }
 
-    .game-card { padding: 18px; }
-
-    .game-card p { margin-bottom: 0; }
-
-    .achievement-card {
+    .achievement-item {
+      position: relative;
       display: block;
       width: 100%;
       padding: 0;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
-      color: inherit;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #eef2f7;
       cursor: zoom-in;
-      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
       transition: border-color 160ms ease, transform 160ms ease;
     }
 
-    .achievement-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
+    .achievement-item:hover {
+      border-color: var(--cyan);
+      transform: translateY(-3px);
     }
 
-    .achievement-card:focus-visible,
-    .lightbox-control:focus-visible {
-      outline: 3px solid var(--accent);
+    .achievement-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .achievement-item:focus-visible,
+    .lightbox-control:focus-visible,
+    .button:focus-visible {
+      outline: 3px solid var(--cyan);
       outline-offset: 3px;
     }
 
-    .achievement-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #f5f8ff;
+    .legal-band {
+      padding: 94px 0;
+      background: var(--paper);
+      color: var(--dark-text);
     }
+
+    .legal-band .eyebrow { color: #006f8b; }
+
+    .legal-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      gap: 50px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .legal-intro h2 {
+      margin-bottom: 0;
+      font-size: 3.1rem;
+    }
+
+    .legal-intro p {
+      margin-bottom: 0;
+      color: #4f5b69;
+    }
+
+    .legal-section {
+      display: grid;
+      grid-template-columns: minmax(210px, 0.52fr) minmax(0, 1.48fr);
+      gap: 50px;
+      padding: 54px 0;
+      border-bottom: 1px solid var(--dark-line);
+      scroll-margin-top: 96px;
+    }
+
+    .legal-section:last-child { border-bottom: 0; }
+
+    .legal-title h3 {
+      margin-bottom: 10px;
+      font-size: 1.65rem;
+    }
+
+    .legal-title p {
+      color: #687482;
+      font-size: 0.9rem;
+    }
+
+    .legal-copy p,
+    .legal-copy li { color: #45515e; }
+
+    .legal-copy h4 {
+      margin: 30px 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .legal-copy h4:first-child { margin-top: 0; }
+
+    .legal-copy ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .legal-copy a {
+      color: #006f8b;
+      font-weight: 750;
+    }
+
+    .reward-callout {
+      margin: 0 0 24px;
+      padding: 18px 20px;
+      border-left: 5px solid #c98a00;
+      background: #fff8e7;
+      color: #513a08;
+    }
+
+    .contact-band {
+      padding: 90px 0;
+      border-top: 1px solid var(--line);
+      background: #121720;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .contact-layout h2 {
+      margin-bottom: 12px;
+      font-size: 3.1rem;
+    }
+
+    .contact-layout p {
+      max-width: 650px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      padding: 28px 0;
+      background: #05070a;
+      color: #8994a5;
+      font-size: 0.84rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a:hover { color: var(--cyan); }
 
     .lightbox {
       width: 100vw;
@@ -144,7 +564,7 @@
       margin: 0;
       padding: 24px 72px;
       border: 0;
-      background: rgba(5, 8, 15, 0.96);
+      background: rgba(5, 7, 11, 0.97);
       color: var(--text);
     }
 
@@ -153,16 +573,14 @@
       place-items: center;
     }
 
-    .lightbox::backdrop {
-      background: rgba(0, 0, 0, 0.82);
-    }
+    .lightbox::backdrop { background: rgba(0, 0, 0, 0.88); }
 
     .lightbox img {
       display: block;
       max-width: 100%;
       max-height: calc(100vh - 48px);
       object-fit: contain;
-      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
     }
 
     .lightbox-control {
@@ -175,15 +593,14 @@
       place-items: center;
       border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 50%;
-      background: rgba(18, 26, 43, 0.9);
+      background: rgba(22, 27, 37, 0.94);
       color: #fff;
       cursor: pointer;
       font-size: 1.8rem;
       line-height: 1;
     }
 
-    .lightbox-control:hover { background: var(--surface-light); }
-
+    .lightbox-control:hover { background: #273140; }
     .lightbox-close { top: 18px; right: 18px; }
     .lightbox-previous { top: 50%; left: 16px; transform: translateY(-50%); }
     .lightbox-next { top: 50%; right: 16px; transform: translateY(-50%); }
@@ -200,285 +617,300 @@
       border: 0;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 24px 0;
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 3.8rem; }
+      .hero-art-bolt { left: -20%; width: 70vw; }
+      .hero-art-hexa { right: -24%; width: 76vw; }
+      .section-heading,
+      .legal-intro,
+      .legal-section { grid-template-columns: 1fr; }
+      .section-heading { gap: 16px; }
+      .games-grid { grid-template-columns: 1fr; }
+      .game-card { min-height: 0; }
+      .legal-intro,
+      .legal-section { gap: 18px; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-layout .button { justify-self: start; }
     }
 
-    nav a {
-      padding: 8px 12px;
-      background: var(--surface-light);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      text-decoration: none;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      .container { width: min(100% - 24px, var(--content)); }
+      .header-inner { min-height: 64px; gap: 18px; }
+      .wordmark { font-size: 0.86rem; }
+      .site-nav { gap: 18px; }
+      .site-nav a { padding: 21px 0 18px; font-size: 0.78rem; }
+      .hero { min-height: 700px; height: calc(100svh - 82px); max-height: 790px; }
+      .hero h1 { font-size: 3rem; }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-art-bolt { bottom: 16%; left: -35%; width: 100vw; }
+      .hero-art-hexa { right: -48%; width: 115vw; }
+      .hero-fact { padding: 12px 6px; }
+      .hero-fact strong { font-size: 0.82rem; }
+      .hero-fact span { font-size: 0.68rem; }
+      .band,
+      .legal-band,
+      .contact-band { padding: 68px 0; }
+      .section-heading h2,
+      .legal-intro h2,
+      .contact-layout h2 { font-size: 2.25rem; }
+      .game-media { min-height: 230px; padding: 20px; }
+      .hexa-media img { width: 210px; }
+      .game-body { padding: 22px; }
+      .achievement-grid { grid-template-columns: 1fr; }
+      .legal-section { padding: 40px 0; }
       .lightbox { padding: 72px 12px 84px; }
       .lightbox img { max-height: calc(100vh - 156px); }
       .lightbox-previous { top: auto; bottom: 18px; left: calc(50% - 58px); transform: none; }
       .lightbox-next { top: auto; right: calc(50% - 58px); bottom: 18px; transform: none; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Erwares Games</h1>
-    <h2><br>Eric Games Studio</h2>
-    <p class="effective-date">
-      <strong>Effective date:</strong> July 1, 2026
-    </p>
-
-    <div class="summary">
-      This page includes the Privacy Policy for <strong>Bolt IQ</strong> and
-      <strong>Hexa Smart Sort</strong>, plus the Terms and Conditions for the
-      Bolt IQ pre-registration reward.
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top" aria-label="Erwares Games home">ERWARES <span>GAMES</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#games">Games</a>
+        <a href="#achievements">Achievements</a>
+        <a href="https://eric347.github.io/#purchases">Purchases</a>
+        <a href="https://eric347.github.io/#pre-registration-terms">Pre-registration</a>
+        <a href="https://eric347.github.io/#contact">Contact</a>
+        <a class="ads-link" href="https://eric347.github.io/app-ads.txt" target="_blank" rel="noopener noreferrer">app-ads.txt</a>
+      </nav>
     </div>
+  </header>
 
-    <nav aria-label="Page sections">
-      <a href="#games">Our games</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#advertising">Advertising</a>
-      <a href="#purchases">Bolt IQ purchases</a>
-      <a href="#pre-registration-terms">Pre-registration terms</a>
-      <a href="/app-ads.txt" target="_blank" rel="noopener noreferrer">Open app-ads.txt</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <p>
-      This Privacy Policy explains how Eric Games Studio ("we", "us", or
-      "our") handles information when you use our mobile games.
-    </p>
-
-    <h2 id="games">Games Covered by This Policy</h2>
-    <div class="game-grid">
-      <section class="game-card">
-        <h3>Hexa Smart Sort</h3>
-        <p>
-          A hexa sorting puzzle game supported by advertisements.
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-art hero-art-bolt" src="My Logo.png" alt="" aria-hidden="true">
+      <img class="hero-art hero-art-hexa" src="Hexa Smart Icon.png" alt="" aria-hidden="true">
+      <div class="hero-content">
+        <p class="hero-kicker">Independent games made with intent</p>
+        <h1 id="hero-title">ERWARES GAMES</h1>
+        <p class="studio-name">ERIC GAMES STUDIO</p>
+        <p class="hero-copy">
+          Precision puzzles, bold worlds, and satisfying mechanics. Every game is built to make the next move feel irresistible.
         </p>
-      </section>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#games">Explore our games</a>
+          <a class="button button-secondary" href="#achievements">View achievements</a>
+        </div>
+      </div>
+      <div class="hero-facts" aria-label="Studio facts">
+        <div class="hero-fact"><strong>2 released games</strong><span>Growing original catalogue</span></div>
+        <div class="hero-fact"><strong>Google Play</strong><span>Built for Android players</span></div>
+        <div class="hero-fact"><strong>Independent studio</strong><span>Designed and developed with care</span></div>
+      </div>
+    </section>
 
-      <section class="game-card">
-        <h3>Bolt IQ</h3>
-        <p>
-          A screw physics puzzle game supported by advertisements, optional
-          rewarded ads, and optional in-app purchases.
-        </p>
-      </section>
-    </div>
+    <section class="band band-dark" id="games">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Our games</p>
+            <h2>Think. Test. Master.</h2>
+          </div>
+          <p>Two distinct puzzle experiences, each designed around clear rules, tactile feedback, and the joy of solving something that first looked impossible.</p>
+        </div>
 
-    <h2 id="achievements">Achievements</h2>
-    <p>
-      Highlights from our game growth, store optimization, and promotional
-      progress.
-    </p>
-    <div class="achievement-grid">
-      <button class="achievement-card" type="button" aria-label="View Bolt IQ promotion campaign achievement">
-        <img src="Screenshot%202026-07-09%20202500.png"
-             alt="Bolt IQ promotion campaign showing cost, conversions, and target CPA results.">
-      </button>
+        <div class="games-grid">
+          <article class="game-card">
+            <div class="game-media bolt-media">
+              <img src="My Logo.png" alt="Bolt IQ logo" loading="eager" decoding="async">
+            </div>
+            <div class="game-body">
+              <p class="game-number">Game 01</p>
+              <h3>BOLT IQ: SCREW PHYSICS PUZZLE</h3>
+              <p>Study the mechanism, choose the right screw, and let physics do the rest. Bolt IQ turns every board into a compact mechanical challenge.</p>
+              <div class="game-actions">
+                <a class="button button-gold" href="https://play.google.com/store/apps/details?id=com.erwares.boltiq" target="_blank" rel="noopener noreferrer">
+                  <span class="play-icon" aria-hidden="true">&#9654;</span> View on Google Play
+                </a>
+              </div>
+            </div>
+          </article>
 
-      <button class="achievement-card" type="button" aria-label="View store listing conversion achievement">
-        <img src="Screenshot%202026-07-09%20202542.png"
-             alt="Store listing dashboard showing a 77.36 percent conversion rate.">
-      </button>
+          <article class="game-card">
+            <div class="game-media hexa-media">
+              <img src="Hexa Smart Icon.png" alt="Hexa Smart Sort game icon" loading="eager" decoding="async">
+            </div>
+            <div class="game-body">
+              <p class="game-number">Game 02</p>
+              <h3>HEXA SMART SORT</h3>
+              <p>Sort vivid hexagonal stacks, read the board ahead, and create clean chain reactions in a colorful puzzle built for smart, relaxing play.</p>
+              <div class="game-actions">
+                <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.erwares.HetaSmartSort" target="_blank" rel="noopener noreferrer">
+                  <span class="play-icon" aria-hidden="true">&#9654;</span> View on Google Play
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <button class="achievement-card" type="button" aria-label="View Bolt IQ performance dashboard achievement">
-        <img src="Screenshot (899).png"
-             alt="Bolt IQ Google Play Console dashboard showing installs, active devices, audience growth, and store performance.">
-      </button>
+    <section class="band band-raised" id="achievements">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Studio momentum</p>
+            <h2>Achievements</h2>
+          </div>
+          <p>Real milestones from our store growth, advertising, discovery, and player acquisition. Select any image to inspect it.</p>
+        </div>
 
-      <button class="achievement-card" type="button" aria-label="View Bolt IQ user growth achievement">
-        <img src="GrowPage.png"
-             alt="Google Play Console Grow users page showing acquisition, activation, engagement, retention, and discovery performance.">
-      </button>
-    </div>
+        <div class="achievement-grid">
+          <button class="achievement-item" type="button" aria-label="View Bolt IQ promotion campaign achievement">
+            <img src="Screenshot 2026-07-09 202500.png" alt="Bolt IQ promotion campaign showing cost, conversions, and target CPA results" loading="lazy" decoding="async">
+          </button>
+          <button class="achievement-item" type="button" aria-label="View store listing conversion achievement">
+            <img src="Screenshot 2026-07-09 202542.png" alt="Store listing dashboard showing a 77.36 percent conversion rate" loading="lazy" decoding="async">
+          </button>
+          <button class="achievement-item" type="button" aria-label="View Bolt IQ performance dashboard achievement">
+            <img src="Screenshot (899).png" alt="Bolt IQ Google Play Console dashboard showing installs, active devices, audience growth, and store performance" loading="lazy" decoding="async">
+          </button>
+          <button class="achievement-item" type="button" aria-label="View Bolt IQ user growth achievement">
+            <img src="GrowPage.png" alt="Google Play Console Grow users page showing acquisition, activation, engagement, retention, and discovery performance" loading="lazy" decoding="async">
+          </button>
+        </div>
+      </div>
+    </section>
 
-    <dialog class="lightbox" id="achievement-lightbox" aria-label="Achievement image viewer">
-      <button class="lightbox-control lightbox-close" type="button" aria-label="Close image viewer" title="Close">&times;</button>
-      <button class="lightbox-control lightbox-previous" type="button" aria-label="View previous image" title="Previous image">&#10094;</button>
-      <img id="lightbox-image" src="" alt="">
-      <button class="lightbox-control lightbox-next" type="button" aria-label="View next image" title="Next image">&#10095;</button>
-      <p class="sr-only" id="lightbox-position" aria-live="polite"></p>
-    </dialog>
+    <section class="legal-band" id="legal">
+      <div class="container">
+        <div class="legal-intro">
+          <div>
+            <p class="eyebrow">Player information</p>
+            <h2>Clear terms. No surprises.</h2>
+          </div>
+          <p>Privacy, purchases, advertising, and reward terms for Bolt IQ and Hexa Smart Sort. Effective July 1, 2026.</p>
+        </div>
 
-    <h2>Information Stored on Your Device</h2>
-    <p>
-      Our games may store gameplay information locally on your device so they
-      can remember progress and preferences. Depending on the game, this may
-      include:
-    </p>
-    <ul>
-      <li>Level progress, scores, and tutorial completion;</li>
-      <li>Coins, rewards, achievements, goals, and unlocked game items;</li>
-      <li>Music, sound, vibration, and notification preferences;</li>
-      <li>Advertising frequency progress; and</li>
-      <li>For Bolt IQ, purchase, subscription, or entitlement status.</li>
-    </ul>
+        <section class="legal-section" id="purchases">
+          <div class="legal-title">
+            <h3>Bolt IQ purchases</h3>
+            <p>Optional Google Play purchases</p>
+          </div>
+          <div class="legal-copy">
+            <p>This section applies only to Bolt IQ. Bolt IQ may offer optional purchases through Google Play, including ad-free access, subscriptions, coin packs, and gameplay power-up packs.</p>
+            <p>Google Play processes payment information. We do not receive or store full credit card or bank account details.</p>
+            <p>Purchasing ad-free access disables automatic interstitial ads. Optional rewarded ads may remain available when a player chooses to use them.</p>
+          </div>
+        </section>
 
-    <h2 id="advertising">Advertising</h2>
-    <p>
-      Hexa Smart Sort and Bolt IQ are ad-supported. They may use advertising
-      services including Google AdMob, Unity LevelPlay, Unity Ads, and other
-      advertising partners available through those platforms.
-    </p>
-    <p>
-      Advertising services may process information such as device type,
-      operating system, language, app version, IP address, approximate location,
-      advertising identifiers where available, ad impressions, clicks, rewards,
-      diagnostics, and fraud-prevention signals.
-    </p>
-    <p>
-      In Bolt IQ, purchasing ad-free access disables automatic interstitial
-      ads. Optional rewarded ads may remain available when a player chooses to
-      use them.
-    </p>
-    <p>
-      Our authorized sellers file is available here:
-      <a href="/app-ads.txt" target="_blank" rel="noopener noreferrer">
-        app-ads.txt
-      </a>.
-    </p>
+        <section class="legal-section" id="pre-registration-terms">
+          <div class="legal-title">
+            <h3>Bolt IQ pre-registration terms</h3>
+            <p>Reward terms and conditions</p>
+          </div>
+          <div class="legal-copy">
+            <div class="reward-callout"><strong>Reward:</strong> Eligible players who pre-register for Bolt IQ on Google Play may receive a Bolt Overdrive reward in the game after launch.</div>
+            <p>These Terms and Conditions apply to the Bolt IQ pre-registration reward offered by Eric Games Studio.</p>
 
-    <h2 id="purchases">Bolt IQ In-App Purchases</h2>
-    <p>
-      This section applies only to Bolt IQ. Bolt IQ may offer optional
-      purchases through Google Play, including ad-free access, subscriptions,
-      coin packs, and gameplay power-up packs.
-    </p>
-    <p>
-      Google Play processes payment information. We do not receive or store
-      full credit card or bank account details.
-    </p>
+            <h4>1. Eligibility</h4>
+            <ul>
+              <li>You must pre-register for Bolt IQ through Google Play before the game is released in your region.</li>
+              <li>You must install and open Bolt IQ after the game becomes available.</li>
+              <li>The reward is available only where Bolt IQ pre-registration and the game are available through Google Play.</li>
+              <li>The reward is limited to eligible Google Play users and may require the same Google account used for pre-registration.</li>
+            </ul>
 
-    <h2 id="pre-registration-terms">
-      Bolt IQ Pre-registration Reward Terms and Conditions
-    </h2>
+            <h4>2. Reward details</h4>
+            <p>The pre-registration reward is a Bolt Overdrive in-game item or power-up. Bolt Overdrive is a gameplay reward for use inside Bolt IQ only. It has no cash value and cannot be exchanged for money, transferred, sold, or redeemed outside the game.</p>
 
-    <div class="notice">
-      <strong>Reward:</strong> Eligible players who pre-register for Bolt IQ on
-      Google Play may receive a Bolt Overdrive reward in the game after launch.
-    </div>
+            <h4>3. Delivery of reward</h4>
+            <p>The reward may be delivered automatically after Bolt IQ launches and the player opens the game. Delivery may depend on Google Play systems, internet connection, app version, account eligibility, and successful reward configuration.</p>
 
-    <p>
-      These Terms and Conditions apply to the Bolt IQ pre-registration reward
-      offered by Eric Games Studio.
-    </p>
+            <h4>4. Availability</h4>
+            <p>We will make reasonable efforts to provide the reward to eligible players. However, the reward may be delayed, changed, replaced with a similar in-game reward, or unavailable if required by technical issues, platform rules, fraud prevention, abuse, or legal requirements.</p>
 
-    <h3>1. Eligibility</h3>
-    <ul>
-      <li>You must pre-register for Bolt IQ through Google Play before the game is released in your region.</li>
-      <li>You must install and open Bolt IQ after the game becomes available.</li>
-      <li>The reward is available only where Bolt IQ pre-registration and the game are available through Google Play.</li>
-      <li>The reward is limited to eligible Google Play users and may require the same Google account used for pre-registration.</li>
-    </ul>
+            <h4>5. Fair use</h4>
+            <p>We may refuse, remove, or adjust a reward if we believe it was claimed through abuse, fraud, technical manipulation, duplicate claims, or a violation of Google Play rules or these terms.</p>
 
-    <h3>2. Reward Details</h3>
-    <p>
-      The pre-registration reward is a Bolt Overdrive in-game item or power-up.
-      Bolt Overdrive is a gameplay reward for use inside Bolt IQ only. It has
-      no cash value and cannot be exchanged for money, transferred, sold, or
-      redeemed outside the game.
-    </p>
+            <h4>6. Changes to these terms</h4>
+            <p>We may update these pre-registration reward terms if the game, reward, Google Play requirements, or legal requirements change. Updates will be posted on this page.</p>
+          </div>
+        </section>
 
-    <h3>3. Delivery of Reward</h3>
-    <p>
-      The reward may be delivered automatically after Bolt IQ launches and the
-      player opens the game. Delivery may depend on Google Play systems,
-      internet connection, app version, account eligibility, and successful
-      reward configuration.
-    </p>
+        <section class="legal-section" id="privacy">
+          <div class="legal-title">
+            <h3>Privacy policy</h3>
+            <p>Bolt IQ and Hexa Smart Sort</p>
+          </div>
+          <div class="legal-copy">
+            <p>This Privacy Policy explains how Eric Games Studio, operating as Erwares Games, handles information when you use our mobile games.</p>
 
-    <h3>4. No Guarantee of Availability</h3>
-    <p>
-      We will make reasonable efforts to provide the reward to eligible
-      players. However, the reward may be delayed, changed, replaced with a
-      similar in-game reward, or unavailable if required by technical issues,
-      platform rules, fraud prevention, abuse, or legal requirements.
-    </p>
+            <h4>Information stored on your device</h4>
+            <p>Our games may store gameplay information locally so they can remember progress and preferences. This may include level progress, scores, tutorial completion, coins, rewards, unlocked items, audio settings, notification preferences, advertising frequency progress, and Bolt IQ purchase or entitlement status.</p>
 
-    <h3>5. Fair Use and Abuse</h3>
-    <p>
-      We may refuse, remove, or adjust a reward if we believe it was claimed
-      through abuse, fraud, technical manipulation, duplicate claims, or a
-      violation of Google Play rules or these terms.
-    </p>
+            <h4>Advertising</h4>
+            <p>Hexa Smart Sort and Bolt IQ are ad-supported. They may use advertising services including Google AdMob, Unity LevelPlay, Unity Ads, and other advertising partners available through those platforms.</p>
+            <p>Advertising services may process device type, operating system, language, app version, IP address, approximate location, advertising identifiers where available, ad impressions, clicks, rewards, diagnostics, and fraud-prevention signals.</p>
+            <p>Our authorized sellers file is available at <a href="https://eric347.github.io/app-ads.txt" target="_blank" rel="noopener noreferrer">eric347.github.io/app-ads.txt</a>.</p>
 
-    <h3>6. Changes to These Terms</h3>
-    <p>
-      We may update these pre-registration reward terms if the game, reward,
-      Google Play requirements, or legal requirements change. Updates will be
-      posted on this page.
-    </p>
+            <h4>Third-party services</h4>
+            <p>Third-party providers process information under their own policies. Review the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and the <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener noreferrer">Unity Game Player and App User Privacy Policy</a>.</p>
 
-    <h2>Third-Party Services</h2>
-    <p>
-      Third-party providers process information under their own privacy
-      policies:
-    </p>
-    <ul>
-      <li>
-        <a href="https://policies.google.com/privacy"
-           target="_blank" rel="noopener noreferrer">
-          Google Privacy Policy
-        </a>
-      </li>
-      <li>
-        <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy"
-           target="_blank" rel="noopener noreferrer">
-          Unity Game Player and App User Privacy Policy
-        </a>
-      </li>
-    </ul>
+            <h4>Your choices</h4>
+            <ul>
+              <li>Use Android and Google privacy or advertising controls.</li>
+              <li>Decline optional rewarded ads.</li>
+              <li>Clear locally stored game data or uninstall a game.</li>
+              <li>Manage Google Play purchases through your Google account.</li>
+              <li>Contact us regarding privacy or reward questions.</li>
+            </ul>
 
-    <h2>Your Choices</h2>
-    <p>You may:</p>
-    <ul>
-      <li>Use Android and Google privacy or advertising controls;</li>
-      <li>Decline optional rewarded ads;</li>
-      <li>Clear locally stored game data or uninstall a game;</li>
-      <li>Manage Google Play purchases through your Google account; and</li>
-      <li>Contact us regarding privacy questions or reward questions.</li>
-    </ul>
+            <h4>Children's privacy</h4>
+            <p>Our games are not directed to children under 13, and we do not knowingly collect personal information directly from children under 13.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>
-      Our games are not directed to children under 13, and we do not knowingly
-      collect personal information directly from children under 13.
-    </p>
+            <h4>Changes to this page</h4>
+            <p>We may update this page when our games, services, rewards, or legal requirements change. The updated page will be posted here with a revised effective date.</p>
+          </div>
+        </section>
+      </div>
+    </section>
 
-    <h2>Changes to This Page</h2>
-    <p>
-      We may update this page when our games, services, rewards, or legal
-      requirements change. The updated page will be posted here with a revised
-      effective date.
-    </p>
-
-    <h2 id="contact">Contact Us</h2>
-    <p>
-      For privacy, support, or pre-registration reward questions, contact
-      Eric Games Studio at
-      <a href="mailto:ericotoo347@gmail.com">ericotoo347@gmail.com</a>.
-    </p>
-
-    <footer>
-      Games covered: Bolt IQ and Hexa Smart Sort |
-      <a href="/app-ads.txt" target="_blank" rel="noopener noreferrer">app-ads.txt</a>
-    </footer>
+    <section class="contact-band" id="contact">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">Contact the studio</p>
+          <h2>Let us hear from you.</h2>
+          <p>For game support, privacy questions, purchase help, or pre-registration reward questions, contact Eric Games Studio.</p>
+        </div>
+        <a class="button button-primary" href="mailto:ericotoo347@gmail.com">ericotoo347@gmail.com</a>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; 2026 Erwares Games. Eric Games Studio.</span>
+      <div class="footer-links">
+        <a href="https://eric347.github.io/#purchases">Purchases</a>
+        <a href="https://eric347.github.io/#pre-registration-terms">Pre-registration terms</a>
+        <a href="#privacy">Privacy</a>
+        <a href="https://eric347.github.io/app-ads.txt" target="_blank" rel="noopener noreferrer">app-ads.txt</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="achievement-lightbox" aria-label="Achievement image viewer">
+    <button class="lightbox-control lightbox-close" type="button" aria-label="Close image viewer" title="Close">&times;</button>
+    <button class="lightbox-control lightbox-previous" type="button" aria-label="View previous image" title="Previous image">&#10094;</button>
+    <img id="lightbox-image" src="" alt="">
+    <button class="lightbox-control lightbox-next" type="button" aria-label="View next image" title="Next image">&#10095;</button>
+    <p class="sr-only" id="lightbox-position" aria-live="polite"></p>
+  </dialog>
+
   <script>
-    const galleryItems = Array.from(document.querySelectorAll('.achievement-card'));
+    const galleryItems = Array.from(document.querySelectorAll('.achievement-item'));
     const lightbox = document.getElementById('achievement-lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxPosition = document.getElementById('lightbox-position');
@@ -496,6 +928,7 @@
       item.addEventListener('click', () => {
         showImage(index);
         lightbox.showModal();
+        document.body.classList.add('lightbox-open');
       });
     });
 
@@ -505,6 +938,11 @@
 
     lightbox.addEventListener('click', (event) => {
       if (event.target === lightbox) lightbox.close();
+    });
+
+    lightbox.addEventListener('close', () => {
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.src = '';
     });
 
     lightbox.addEventListener('keydown', (event) => {
